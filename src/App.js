@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
+import RegistrationForm from "./RegistrationForm";
 
 let menu = [
   { link: "/articles", label: "Articles" },
@@ -13,6 +14,7 @@ class App extends Component {
       <div>
         <h1>Test from App</h1>
         <Header items={menu} />
+        <RegistrationForm />
       </div>
     );
   }
