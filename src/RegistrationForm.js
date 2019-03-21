@@ -14,18 +14,32 @@ class RegistrationForm extends Component {
     console.log("Changet email", e.target.value);
     this.setState({ email: e.target.value });
   };
+
+  submit = () => {
+    console.log("SUBMIT", this.testInput.value);
+  };
+
   render() {
     return (
-      <form action="" onSubmit={this.handleSubmit}>
-        {console.log(this.state.email)}
+      <div>
+        <form action="" onSubmit={this.handleSubmit}>
+          {console.log(this.state.email)}
+          <input
+            type="text"
+            value={this.state.email}
+            placeholder="E-mail"
+            onChange={this.handleEmailChange}
+          />
+          <button>Save</button>
+        </form>
+
         <input
           type="text"
-          value={this.state.email}
-          placeholder="E-mail"
-          onChange={this.handleEmailChange}
+          placeholder="Submit"
+          ref={input => (this.testInput = input)}
         />
-        <button>Save</button>
-      </form>
+        <button onClick={this.submit}>Save</button>
+      </div>
     );
   }
 }
